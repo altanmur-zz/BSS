@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+    <!-- New note Form View -->
+    <record model="ir.ui.view" id="view_note_note_inherit_tree">
+      <field name="name">note.note.tree</field>
+      <field name="model">note.note</field>
+      <field name="inherit_id" ref="note.view_note_note_tree"></field>
+      <field name="arch" type="xml">
+        <xpath expr="//tree/field[@name='name']" position="after">
+          <field name="description"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- New note Form View -->
+    <record model="ir.ui.view" id="view_note_note_inherit_form">
+        <field name="name">note.note.form</field>
+        <field name="model">note.note</field>
+        <field name="inherit_id" ref="note.view_note_note_form"></field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='memo']" position="after">
+              <field name="description"/>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</openerp>
