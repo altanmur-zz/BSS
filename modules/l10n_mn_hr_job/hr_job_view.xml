@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data> 
+	 <record id="view_hr_job_form_inherit" model="ir.ui.view">
+        <field name="name">hr.job.form.inherit</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr.view_hr_job_form"/>
+        <field name="arch" type="xml">
+        	<data>
+        		<xpath expr="//header" position="replace" />
+            	<xpath expr="//sheet" position="replace" >
+            		<sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" class="oe_inline"/></h1>
+                        </div>
+                        <div class="oe_right" name="buttons"/>
+                        <group name="employee_data">
+                        	<field name="no_of_recruitment" class="oe_inline"/>
+                        </group>
+                        <group>
+	                        <group>
+		                        <field name="release_date" required="1"/>
+		                        <field name="end_date"/>
+	                        </group>
+	                        <group/>
+                        </group>
+                        <group>
+	                		<div class="oe_title">
+		                        <label for="description" class="oe_edit_only"/>
+	                        	<field name="description" required="1"/>
+                        	</div>
+                        	<div class="oe_title">                        		
+		                        <label for="requirements" class="oe_edit_only"/>
+	                        	<field name="requirements" required="1"/>
+	                		</div>
+                		</group>   
+                    	<group>  
+                    		<div class="oe_title">                      		
+		                        <label for="document_id" class="oe_edit_only"/>
+	                        	<field name="document_id" required="1"/>
+                        	</div>
+                    	</group>
+                    </sheet>
+               	</xpath>
+           	</data>
+        </field>
+    </record>
+
+    <record id="view_hr_job_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.job.tree</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr.view_hr_job_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="replace">
+                <tree string="Job">
+                    <field name="name"/>   
+                    <field name="no_of_recruitment"/>  
+                    <field name="release_date"/>   
+                    <field name="end_date"/>   
+                </tree> 
+            </xpath>     
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_hr_job_inherit">
+        <field name="name">Job Positions</field>
+        <field name="res_model">hr.job</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem action="action_hr_job_inherit" id="menu_hr_job" parent="base.menu_crm_case_job_req_main" sequence="5"/>
+
+    <record id="view_compose_document_form" model="ir.ui.view">
+        <field name="name">compose.document.form</field>
+        <field name="model">compose.document</field>
+        <field name="arch" type="xml">
+            <form string="Document">
+                <sheet>
+                    <label for="name" class="oe_edit_only"/>
+                    <field name="name"/>
+                </sheet>                        
+            </form>
+        </field>
+    </record>
+
+        <record id="view_compose_document_tree" model="ir.ui.view">
+            <field name="name">compose.document.tree</field>
+            <field name="model">compose.document</field>
+            <field name="arch" type="xml">
+                <tree string="Document">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+         <record model="ir.actions.act_window" id="action_compose_document">
+            <field name="name">Compose Document</field>
+            <field name="res_model">compose.document</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+     	<menuitem action="action_compose_document" id="menu_compose_document" parent="hr.menu_hr_configuration" sequence="5"/>
+
+	</data>
+</openerp>
