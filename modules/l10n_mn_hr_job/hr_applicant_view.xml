@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+		<record id="hr_applicant_form_view_job" model="ir.ui.view">
+	        <field name="name">Jobs - Recruitment Form</field>
+	        <field name="model">hr.applicant</field>
+	        <field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
+	        <field name="arch" type="xml">
+		    	<data>
+		    		<xpath expr="//header" position="replace" >
+		    		<header>
+						<button name="approve" string="Approve" type="object" class="oe_highlight"/>
+	                    <field name="state" widget="statusbar" statusbar_visible="approved" statusbar_colors='{"approved":"blue"}' readonly="1"/>            
+					</header>
+				</xpath>
+			  	<xpath expr="//form[@string='Jobs - Recruitment Form']" position="attributes">
+                    <attribute name="create">0</attribute>
+                </xpath>
+				</data>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_applicant_tree">
+        <field name="name">Jobs - Recruitment Form</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.crm_case_tree_view_job"/>
+        <field name="arch" type="xml">
+        	<xpath expr="//tree[@string='Applicants']" position="attributes">
+                    <attribute name="create">0</attribute>
+                </xpath>
+        	<xpath expr="//field[@name='stage_id']" position="replace"/>
+        	<xpath expr="//field[@name='priority']" position="replace"/>
+        	<xpath expr="//field[@name='user_id']" position="replace"/>
+        </field>
+    </record>
+
+     	<record model="ir.actions.act_window" id="action_hr_job_applications_inherit">
+            <field name="name">Jobs - Recruitment</field>
+            <field name="res_model">hr.applicant</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+     	<menuitem action="action_hr_job_applications_inherit" id="menu_hr_job_applications" parent="base.menu_crm_case_job_req_main" sequence="5"/>
+	</data>
+</openerp>					

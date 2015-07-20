@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data> 
+<template id="job_inhertit" inherit_id="website_hr_recruitment.detail">
+     <xpath expr="//div[@id='wrap']" position="replace">  
+
+    <div id="wrap" class="box pad-big right job-detail-full">
+        <section>
+            <h3 class="calibri">Програм зохиогч </h3>
+            <div class="job-desc" rel_id="1054">
+            • ERP, бизнесийн програм хангамжийн хөгжүүлэлт дээр ажиллах
+            • Ажлын байрны тодорхойлолтод заагдсаны дагуу
+            </div>
+            <div class="clearfix"></div>
+        </section>
+        <section>
+            <h3 class="calibri">Ажлын байранд тавигдах шаардлага:</h3>
+            <dl><dd><blockquote>• Програм хангамж, мэдээллийн системийн удирдлага мэргэжлийн чиглэлээр бакалавр болон түүнээс дээш зэрэгтэй • Web-н талаар үндсэн ойлголттой • HTML, Javascript -н талаар мэдлэгтэй • Программчлалын ямар нэг хэлний мэдлэгтэй (PHP, .NET C#, Java гэх мэт) • MySql, Postgresql дээр ажиллах чадвартай • Linux орчин, сүлжээний мэдлэгтэй байх • Системийн шинжилгээ хийх чадвартай • Шинэ програмчлалын хэл, шинэ мэдлэг хурдан сурах чадвартай</blockquote></dd><dd><blockquote>• ERP, бизнесийн програм хангамжийн хөгжүүлэлт дээр ажиллаж байсан туршлагатай • Odoo ERP-н талаар мэдлэгтэй, өмнө нь ашиглаж байсан туршлагатай • Python, Postgresql дээр ажиллаж байсан туршлагатай • Нягтлан бодох бүртгэлийн мэдлэгтэй • Мэдээлэл технологийн инженерийн шалгалтын сертификаттай • Дээрх шаардлагуудыг хангасан бол давуу тал болно</blockquote></dd></dl>
+            <div class="clearfix"></div>
+                <div class="job-buttons" rel_id="1054">
+                    <a href="/user/applications/apply/1054/" id="send-cv1054" class="button post-popup fancybox">CV илгээх</a>
+                    <div class="clearfix"></div>
+                </div>
+        </section>
+    </div>
+     <!-- <label string="Job Number of recruitment" />
+        <h4 t-if="job" class="text-center text-muted">
+            <span t-field="job.no_of_recruitment"/>
+        </h4>
+      <label string="Job Description" />  
+        <h4 t-if="job" class="text-muted">
+            <span t-field="job.description"/>
+        </h4>
+        <label string="Job requirements" />
+        <h4 t-if="job" class="text-center">
+            <span t-field="job.requirements"/>
+        </h4>
+        <label string="release_date" />
+        <h4 t-if="job" class="text-center">
+            <span t-field="job.release_date"/>
+        </h4>
+        <label string="end date" />
+        <h4 t-if="job" class="text-center">
+            <span t-field="job.end_date"/>
+        </h4>
+        <label string="end date" />
+        <h4 t-if="job" class="text-center">
+            <span t-field="job.end_date"/>
+        </h4>
+        <label string="document_id" />
+        <h4 t-if="job" class="text-center">
+            <span t-field="job.document_id"/>
+        </h4> -->
+    </xpath>
+</template>
+</data>
+</openerp>
