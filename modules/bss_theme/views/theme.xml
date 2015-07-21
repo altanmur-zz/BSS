@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+  <template id="theme_customize" inherit_id="website.layout" name="theme_customize Bootswatch">
+      <xpath expr="//div[@id='wrapwrap']" position="replace">
+        <div id="wrapwrap" data-spy="scroll" data-target="#main-navbar" style="display: inline-block;">
+          <div class="page-loader"></div>
+          <div class="body" style="display: block;">
+
+            <header id="header" class="header-main" style=" width: 100%; display: block;">
+
+              <nav id="main-navbar" class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-top-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- <a class="navbar-brand" href="/" t-field="res_company.name"/> -->
+                        <a href="/" class="navbar-brand logo">
+                          <img src="/bss_theme/static/src/img/bss_logo.png" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name"/>
+                      </a>
+                    </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                              <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                <li t-if="not submenu.child_id" t-att-class="
+                                ((submenu.url and submenu.url != '/' and request.httprequest.path.startswith(submenu.url)) or
+                                 request.httprequest.path == submenu.url) and 'active'
+                                ">
+                                  <a class="page-scroll" t-att-href="(website.menu_id.child_id[0] == submenu) and '/' or submenu.url" t-ignore="true" >
+                                      <span t-field="submenu.name"/>
+                                      <!-- t-att-target="'_blank' if submenu.new_window else None" -->
+                                  </a>
+                                </li>
+                                <li t-if="submenu.child_id" t-attf-class="dropdown #{
+                                    ((submenu.url and submenu.url != '/' and [1 for submenu in submenu.child_id if request.httprequest.path.startswith(submenu.url)]) or
+                                     request.httprequest.path == submenu.url) and 'active'
+                                    }">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <span t-field="submenu.name"/> <span class="caret" t-ignore="true"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <t t-foreach="submenu.child_id" t-as="submenu">
+                                            <t t-call="website.submenu"/>
+                                        </t>
+                                    </ul>
+                                </li>
+                              </t>
+                                
+                                <!-- <li class="divider" t-ignore="true" t-if="website.user_id != user_id"/> -->
+                                <!-- <li class="dropdown" t-ignore="true" t-if="website.user_id != user_id">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <b>
+                                            <span t-esc="user_id.name"/>
+                                            <span class="caret"></span>
+                                        </b>
+                                    </a>
+                                    <ul class="dropdown-menu js_usermenu" role="menu">
+                                        <li><a href="/web" role="menuitem">My Account</a></li>
+                                        <li class="divider"/>
+                                        <li><a t-attf-href="/web/session/logout?redirect=/" role="menuitem">Logout</a></li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                      <!-- </div> -->
+                      <!-- /.container -->
+                    <!-- </nav> -->
+                      <!-- End Navbar -->
+                </div>
+              </nav>
+            </header>
+
+            <main style="display: block; ">
+                <t t-raw="0"/>
+            </main>
+
+            <footer>
+                <div id="footer_container">
+                </div>
+            </footer>
+          </div>
+        </div>
+        <!-- <t t-call-assets="web.assets_common" t-css="false"/>
+        <t t-call-assets="website.assets_frontend" t-css="false"/>
+        <script t-if="website and website.google_analytics_key">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', _.str.trim('<t t-esc="website.google_analytics_key"/>'), 'auto');
+            ga('send','pageview');
+        </script> -->
+      <!-- </body> -->
+      </xpath>
+  </template>
+
+  <template id="bss_index" name="BSS Index Page">
+    <t t-call="website.layout">
+      <div id="wrap" class="oe_structure oe_empty" style="display: block; width: 100%;">
+        <section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(/web/static/src/img/slider-bg.jpg);">
+        
+          <div class="container" style="width: inherit; display: table;">
+            <div class="caption text-center text-white" data-stellar-ratio="0.7">
+
+              <div id="owl-intro-text" class="owl-carousel">
+                <div class="item">
+                  <h1>We have Awesome things</h1>
+                  <p>Let's make the web beautiful together</p>
+                                  <div class="extra-space-l"></div>
+                  <a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">View More!</a>
+                </div>
+                <div class="item">
+                  <h1>Join with us</h1>
+                  <p>To the greatest Journey</p>
+                  <div class="extra-space-l"></div>
+                  <a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">View More!</a>
+                </div>
+                <div class="item">
+                  <h1>I'm Unika</h1>
+                  <p>One Page Responsive Theme</p>
+                  <div class="extra-space-l"></div>
+                  <a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">View More!</a>
+                </div>
+              </div>
+
+            </div> 
+          </div> 
+        </section>
+
+        <section id="about-section" class="page bg-style1">
+              
+          <h2>About</h2>
+                            
+        </section>
+        
+        <section id="contact-section" class="page bg-style1">
+          Contact section
+          
+        </section>
+      </div>
+    </t>
+  </template>
+
+  <template id="bss_assets_frontend" name="BSS Assets Frontend" inherit_id="website.assets_frontend">
+      <xpath expr="." position="inside">
+
+          <!-- <link rel="stylesheet" href="/bss_theme/static/src/inc/bootstrap/css/bootstrap.min.css"/> -->
+          <link rel="stylesheet" href="/bss_theme/static/src/inc/animations/css/animate.min.css"/>
+          <!-- <link rel="stylesheet" href="/bss_theme/static/src/inc/font-awesome/css/font-awesome.min.css"/>  -->
+          <link rel="stylesheet" href="/bss_theme/static/src/inc/owl-carousel/css/owl.carousel.css"/>
+          <!-- <link rel="stylesheet" href="/bss_theme/static/src/inc/owl-carousel/css/owl.theme.css"/> -->
+          <!-- <link rel="stylesheet" href="/bss_theme/static/src/css/reset.css"/> -->
+          <link rel="stylesheet" href="/bss_theme/static/src/css/style.css"/>
+          <link rel="stylesheet" href="/bss_theme/static/src/css/mobile.css"/>
+          <link rel="stylesheet" href="/bss_theme/static/src/css/skin/ice-blue.css"/>
+
+          <!-- <script type="text/javascript" src="/bss_theme/static/src/inc/jquery/jquery-1.11.1.min.js"></script> -->
+          <!-- <script type="text/javascript" src="/bss_theme/static/src/inc/bootstrap/js/bootstrap.min.js"></script> -->
+          <script type="text/javascript" src="/bss_theme/static/src/inc/owl-carousel/js/owl.carousel.min.js"></script>
+          <script type="text/javascript" src="/bss_theme/static/src/inc/stellar/js/jquery.stellar.min.js"></script>
+          <script type="text/javascript" src="/bss_theme/static/src/inc/animations/js/wow.min.js"></script>
+          <script type="text/javascript" src="/bss_theme/static/src/inc/waypoints.min.js"></script>
+          <script type="text/javascript" src="/bss_theme/static/src/inc/isotope.pkgd.min.js"></script>
+          <script type="text/javascript" src="/bss_theme/static/src/inc/classie.js"></script>
+          <!-- <script type="text/javascript" src="/bss_theme/static/src/inc/jquery.easing.min.js"></script> -->
+          <script type="text/javascript" src="/bss_theme/static/src/inc/jquery.counterup.min.js"></script>
+          <script type="text/javascript" src="/bss_theme/static/src/inc/smoothscroll.js"></script>
+          <script type="text/javascript" src="/bss_theme/static/src/js/theme.js"></script>
+          
+      </xpath>
+  </template>
+
+  <template id="layout_lang_show" inherit_id="website.layout" customize_show="True" name="Show Language">
+    <xpath expr="//body//div['id=wrawrap']" position="before">
+        <div style="width: 100%; height: 36px; color:#f7f7f7; display: block; float:right; text-align: center; padding-right:15px; background-color: #2670a8;">
+            <ul id="top_menu" class="list-inline js_language_selector" style="margin-top:6px ;margin-bottom:6px; float:right;" t-if="(request.website_multilang and len(languages) &gt; 1) or editable">
+                <li t-foreach="languages" t-as="lg">
+                    <a style="color: #444444; font-weight:bold;" t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])" t-att-data-default-lang="editable and 'true' if lg[0] == website.default_lang_code else None" t-att-data-lang="lg[0]" class="js_change_lang">
+                      <t t-esc="lg[1].split('/').pop()"/>
+                    </a>
+                </li>
+               <!--  <li class="dropdown" t-ignore="true" t-if="website.user_id != user_id">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <b>
+                            <span t-esc="user_id.name"/>
+                            <span class="caret"></span>
+                        </b>
+                    </a> -->
+                    <!-- <ul class="dropdown-menu js_usermenu" role="menu"> -->
+                        <!-- <li><a href="/web" role="menuitem">My Account</a></li> -->
+                        <li class="divider"/>
+                        <li it-ignore="true" t-if="website.user_id != user_id">
+                          <a t-attf-href="/web/session/logout?redirect=/" role="menuitem">Logout</a>
+                        </li><!-- 
+                    </ul> -->
+                <!-- </li> -->
+            </ul>
+
+        </div>
+    </xpath>
+  </template>
+
+  <!-- <template id="bss_assets_backend" name="BSS Assets Backend" inherit_id="web.assets_backend">
+      <xpath expr="." position="inside">
+      </xpath>
+  </template> -->
+</data>
+</openerp>
