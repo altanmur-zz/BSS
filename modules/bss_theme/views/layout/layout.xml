@@ -1,0 +1,34 @@
+<openerp>
+  <data>
+    <template id="bss_assets_frontend" name="BSS Assets Frontend" inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+            <!-- <link id="bootstrap_css" rel='stylesheet' href='/web/static/lib/bootstrap/css/bootstrap.css'/> -->
+
+            <!-- <link rel="stylesheet" href="/bss_theme/static/src/inc/bootstrap/css/bootstrap.min.css"/> -->
+            <!-- <link rel="stylesheet" href="/bss_theme/static/src/inc/animations/css/animate.min.css"/> -->
+            <!-- <link rel="stylesheet" href="/bss_theme/static/src/inc/font-awesome/css/font-awesome.min.css"/>  -->
+            <!-- <link rel="stylesheet" href="/bss_theme/static/src/inc/owl-carousel/css/owl.carousel.css"/> -->
+            <!-- <link rel="stylesheet" href="/bss_theme/static/src/inc/owl-carousel/css/owl.theme.css"/> -->
+            <!-- <link rel="stylesheet" href="/bss_theme/static/src/css/reset.css"/> -->
+            <!-- <link rel="stylesheet" href="/bss_theme/static/src/css/style.css"/> -->
+            <link rel="stylesheet" href="/bss_theme/static/src/css/main.css"/>
+            <!-- <link rel="stylesheet" href="/bss_theme/static/src/css/mobile.css"/> -->
+            <!-- <link rel="stylesheet" href="/bss_theme/static/src/css/skin/ice-blue.css"/> -->
+
+            <!-- <script type="text/javascript" src="/bss_theme/static/src/inc/jquery/jquery-1.11.1.min.js"></script> -->
+            <!-- <script type="text/javascript" src="/bss_theme/static/src/inc/bootstrap/js/bootstrap.min.js"></script> -->
+           <!--  <script type="text/javascript" src="/bss_theme/static/src/inc/owl-carousel/js/owl.carousel.min.js"></script>
+            <script type="text/javascript" src="/bss_theme/static/src/inc/stellar/js/jquery.stellar.min.js"></script>
+            <script type="text/javascript" src="/bss_theme/static/src/inc/animations/js/wow.min.js"></script>
+            <script type="text/javascript" src="/bss_theme/static/src/inc/waypoints.min.js"></script>
+            <script type="text/javascript" src="/bss_theme/static/src/inc/isotope.pkgd.min.js"></script>
+            <script type="text/javascript" src="/bss_theme/static/src/inc/classie.js"></script>
+            <script type="text/javascript" src="/bss_theme/static/src/inc/jquery.easing.min.js"></script>
+            <script type="text/javascript" src="/bss_theme/static/src/inc/jquery.counterup.min.js"></script> -->
+            <script type="text/javascript" src="/bss_theme/static/src/inc/smoothscroll.js"></script>
+            <!-- <script type="text/javascript" src="/bss_theme/static/src/js/theme.js"></script> -->
+            
+        </xpath>
+    </template>
+  </data>
+</openerp>

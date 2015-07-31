@@ -1,0 +1,46 @@
+<openerp>
+	<data>
+		<template id="bss_section_block" inherit_id="website.snippets" name="section_block">
+			<xpath expr="//div//ul" position="inside">
+				<li><a href="#snippet_section_block" data-toggle="tab">BSS block</a></li>
+			</xpath>
+		
+			<xpath expr="//div//div" position="inside">
+				<div id="snippet_section_block" class="tab-pane">
+				    <div style="height: 100%;"> 	
+				        <div class="oe_snippet_thumbnail">
+				            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_banner.png"/>
+				            <span class="oe_snippet_thumbnail_title">Banner Test</span>
+				        </div>
+				        <div id="myCarousel" class="oe_snippet_body carousel slide mb32" style="height: 100%;">
+				            <!-- Indicators -->
+				            <ol class="carousel-indicators hidden">
+				                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				            </ol>
+				            <div class="carousel-inner">
+				                <div class="item active" style="background-image: url('/website/static/src/img/banner/color_splash.jpg')">
+				                    <div class="container">
+				                        <div class="row content">
+				                            <div class="carousel-content col-md-6 col-sm-12">
+				                                    <h2>Your Banner Title</h2>
+				                                    <h3>Click to customize this text</h3>
+				                                    <p>
+				                                        <a href="/page/website.contactus" class="btn btn-success btn-large">Contact us</a>
+				                                    </p>
+				                            </div>
+				                            <div class="carousel-img col-md-6 hidden-sm hidden-xs">
+				                                <img class="img-responsive" src="/website/static/src/img/banner/banner_picture.png" alt="Banner Odoo Image"/>
+				                            </div>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="carousel-control left hidden" data-target="#myCarousel" data-slide="prev" style="width: 10%"><i class="fa fa-chevron-left"></i></div>
+				            <div class="carousel-control right hidden" data-target="#myCarousel" data-slide="next" style="width: 10%"><i class="fa fa-chevron-right"></i></div>
+				        </div>
+				    </div>
+				</div>
+			</xpath>
+		</template>
+	</data>
+</openerp>
