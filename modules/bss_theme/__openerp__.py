@@ -7,7 +7,12 @@
     'author': 'Aptena',
     'depends': ['website'],
     'data': [
-        'views/theme.xml',
+        # 'views/theme.xml',
+        # 'views/test.xml',
+        'views/blocks/blocks.xml',
+        'views/header_footer/language.xml',
+        'views/layout/body.xml',
+        'views/position/layout.xml',
     ],
     'images': ['static/description/bootswatch.png'],
     'application': False,

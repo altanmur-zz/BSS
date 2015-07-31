@@ -1,0 +1,30 @@
+<openerp>
+  <data>
+
+    <template id="bss_index" name="BSS Index Page">
+      <t t-call="website.layout">
+        <div id="wrap" class="oe_structure oe_empty" style="display: block; width: 100%;">
+          <section id="headerwrap" data-stellar-background-ratio="0.5" style="background-image: url(/bss_theme/static/src/img/slider-bg.jpg); height: 100% !important; display:block;">
+            <header class="clearfix"> <i class="fa fa-language icon"></i>
+              <h1>Creative High Quality</h1>
+              <p>Lorem ipsum dolor sit amet, cu menandri molestiae voluptaria eam,
+                invidunt reprehendunt nec ei. Sonet regione consulatu vel id.</p>
+              <a href="#portfolio" class="smoothScroll btn btn-lg">See Our Works</a> 
+            </header>
+          </section>
+
+          <section id="about-section" class="page bg-style1">
+                
+            <h2>About</h2>
+                              
+          </section>
+          
+          <section id="contact-section" class="page bg-style1">
+            Contact section
+            
+          </section>
+        </div>
+      </t>
+    </template>
+  </data>
+</openerp>

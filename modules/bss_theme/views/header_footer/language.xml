@@ -1,0 +1,32 @@
+<openerp>
+    <data>
+        <template id="layout_lang_show" inherit_id="website.layout" customize_show="True" name="Show Language">
+            <xpath expr="//body//div['id=wrapwrap']" position="before">
+                <div style="width: 100%; height: 36px; color:#f7f7f7; display: block; float:right; text-align: center; padding-right:15px; background-color: #2670a8; z-index:90000000">
+                    <ul id="top_menu" class="list-inline js_language_selector" style="margin-top:6px ;margin-bottom:6px; float:right;" t-if="(request.website_multilang and len(languages) &gt; 1) or editable">
+                        <li t-foreach="languages" t-as="lg">
+                            <a style="color: #444444; font-weight:bold;" t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])" t-att-data-default-lang="editable and 'true' if lg[0] == website.default_lang_code else None" t-att-data-lang="lg[0]" class="js_change_lang">
+                              <t t-esc="lg[1].split('/').pop()"/>
+                            </a>
+                        </li>
+                       <!--  <li class="dropdown" t-ignore="true" t-if="website.user_id != user_id">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <b>
+                                    <span t-esc="user_id.name"/>
+                                    <span class="caret"></span>
+                                </b>
+                            </a> -->
+                            <!-- <ul class="dropdown-menu js_usermenu" role="menu"> -->
+                                <!-- <li><a href="/web" role="menuitem">My Account</a></li> -->
+                                <li class="divider"/>
+                                <li it-ignore="true" t-if="website.user_id != user_id">
+                                  <a t-attf-href="/web/session/logout?redirect=/" role="menuitem">Logout</a>
+                                </li><!-- 
+                            </ul> -->
+                        <!-- </li> -->
+                    </ul>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</openerp>
